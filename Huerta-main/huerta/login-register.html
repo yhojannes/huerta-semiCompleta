@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="css/login-register.css">
+    <link rel="icon" type="image/png" href="img/planta.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Fondo animado --> 
+        <div class="background-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+
+        <!-- Contenedor principal  -->
+        <div class="auth-container">
+            <!-- Panel de Login  -->
+            <div class="form-panel login-panel active" id="loginPanel">
+                <div class="form-header">
+                    <h1>Bienvenido de vuelta</h1>
+                    <p>Inicia sesión en tu cuenta</p>
+                </div>
+
+                <form class="auth-form" id="loginForm" action="./php/login.php" method="post" autocomplete="off">
+                    <div class="input-group">
+                        <input type="email" id="loginEmail" name="email" required placeholder=" " autocomplete="off">
+                        <label for="loginEmail">Correo electrónico</label>
+                        <div class="input-line"></div>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="password" id="loginPassword" name="password" required placeholder=" " autocomplete="off">
+                        <label for="loginPassword">Contraseña</label>
+                        <div class="input-line"></div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <span class="btn-text">Iniciar Sesión</span>
+                        <div class="btn-loader"></div>
+                    </button>
+                </form>
+
+                <div class="form-footer">
+                    <p>¿No tienes una cuenta? 
+                        <a class="switch-btn" onclick="switchToRegister()">Regístrate aquí</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Panel de Registro  -->
+            <div class="form-panel register-panel" id="registerPanel">
+                <div class="form-header">
+                    <h1>Crear cuenta</h1>
+                    <p>Únete a nuestra comunidad</p>
+                </div>
+
+                <form action="./php/registro.php" class="auth-form" method="post" id="registerForm">
+                    <div class="input-row">
+                        <div class="input-group">
+                            <input type="text" id="firstName" name="firstName" required placeholder=" " autocomplete="off">
+                            <label for="firstName">Nombre</label>
+                            <div class="input-line"></div>
+                            <div class="input-error-message"></div>
+                        </div>
+
+                        <div class="input-group">
+                            <input type="text" id="lastName" name="lastName" required placeholder=" " autocomplete="off">
+                            <label for="lastName">Apellido</label>
+                            <div class="input-line"></div>
+                            <div class="input-error-message"></div>
+                        </div>
+
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="registerEmail" name="registerEmail" required placeholder=" " autocomplete="off">
+                        <label for="registerEmail">Correo electrónico</label>
+                        <div class="input-line"></div>
+                        <div class="input-error-message"></div>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="password" id="registerPassword" name="registerPassword" required placeholder=" " autocomplete="off">
+                        <label for="registerPassword">Contraseña</label>
+                        <div class="input-line"></div>
+                        <div class="input-error-message"></div>
+                        <button type="button" class="password-toggle" onclick="togglePassword('registerPassword')">
+                            <span class="eye-icon eye-open">
+                                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                                </svg>
+                            </span>
+                            <span class="eye-icon eye-closed" style="display:none;">
+                                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M2 12s4-7 10-7 10 7 10 7" />
+                                    <path d="M2 12s4 7 10 7 10-7 10-7" />
+                                    <line x1="4" y1="16" x2="20" y2="8" />
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="password" id="confirmPassword" name="confirmPassword" required placeholder=" " autocomplete="off">
+                        <label for="confirmPassword">Confirmar contraseña</label>
+                        <div class="input-line"></div>
+                        <div class="input-error-message"></div>
+                    </div>
+
+                    <div class="password-strength">
+                        <div class="strength-bar">
+                            <div class="strength-fill"></div>
+                        </div>
+                        <span class="strength-text">Fortaleza de la contraseña</span>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <span class="btn-text">Crear Cuenta</span>
+                        <div class="btn-loader"></div>
+                    </button>
+
+                </form>
+
+                <div class="form-footer">
+                    <p>¿Ya tienes una cuenta? 
+                        <a class="switch-btn" onclick="switchToLogin()">Inicia sesión aquí</a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Notificaciones --> 
+        <div class="notification" id="notification">
+            <div class="notification-content">
+                <span class="notification-icon"></span>
+                <span class="notification-message"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/login-register.js"></script>
+</body>
+</html>
