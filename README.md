@@ -25,7 +25,7 @@ Aplicación web fullstack para la gestión de una huerta escolar automatizada co
 
 ---
 
-##️ Estructura de la base de datos
+## Estructura de la base de datos
 
 ```
 usuarios         → Registro y autenticación de usuarios
@@ -70,7 +70,7 @@ huerta.sql
 
 ---
 
-##️ Instalación local
+## Instalación local
 
 1. Clonar el repositorio:
 ```bash
