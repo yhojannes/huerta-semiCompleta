@@ -1,0 +1,26 @@
+# Credenciales y configuración sensible
+huerta/php/config.php
+
+# Imágenes y videos pesados
+huerta/img/*.jpg
+huerta/img/*.jpeg
+huerta/img/*.png
+huerta/videos/*.mp4
+huerta/videos/*.avi
+huerta/videos/*.mov
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos temporales de editores
+*.log
+*.tmp
+*.swp
+.vscode/
+.idea/
+
+# Dependencias (si en algún momento usás composer o npm)
+vendor/
+node_modules/
